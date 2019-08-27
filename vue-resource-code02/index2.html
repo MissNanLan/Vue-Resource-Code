@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <script type="text/javascript" src='./vue1.js'></script> -->
+    <script type="text/javascript" src='./vue1.js'></script>
+
+</head>
+
+<body>
+    <div id="app">
+    </div>
+    <script>
+        // var componentA = {};  // 局部
+        // var vm = new Vue({
+        //     el: '#app',
+        //     components: {
+
+        //         "components-a": componentA
+        //     },
+        //     data: {
+        //         message: 'hello nanlan',
+        //         name:"xiaojuju"
+
+        //     }
+        // })
+
+        // Vue.component('button-counter',{
+        //     data: function(){
+        //         return {
+        //            text: "xiaojuju "
+        //         }
+        //     },
+        //     el: "",
+        //     template: '<button>{{text}}</button>'
+        // })
+        // new Vue({el:'#app'})
+
+        // var myComponent = Vue.extend({
+        //     template: '<div>ddd </div>',
+        //     data: function(){
+        //         return {
+
+        //         }
+        //     }
+        // })
+        // new Vue({
+        //     el: '#app',
+        //     components: {
+        //         "my-component": myComponent
+        //     }
+        // })
+
+        // var myComponent = Vue.extend({
+        //      template: '<div>ddd</div>',
+        //       data: function(){
+        //         return {
+
+        //         }
+        //     }
+        // })
+        // new myComponent().$mount('#app');  
+
+        // var vm = new Vue({
+        //     el: "#app",
+        //     data: {
+
+        //     }
+        // })
+        // console.log(vm.$options)
+        
+        var componentA = {};  // 局部
+        var Parent = Vue.extend({
+            data: function () {
+                age: 30
+            },
+            components: {
+                "my-component": componentA
+            },
+            directives: {}
+        });
+        var Child = Parent.extend({});
+    </script>
+</body>
+
+</html>
