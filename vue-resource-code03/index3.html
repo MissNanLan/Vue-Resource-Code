@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <s cript type="text/javascript" src='./vue1.js'></script> -->
+    <script type="text/javascript" src='./vue2.5.1.js'></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <Parent></Parent>
+    </div>
+    <script>
+        // var Child = {
+        //     template: "<div>{{message}}</div>",
+        //     props: ["message"]
+        // }
+
+        // var Parent = {
+        //     template: `<Child message="123"></Child>`,
+        //     components: {
+        //         "Child": Child
+        //     }
+        // }
+        // new Vue({
+        //     el: '#app',
+        //     components: {
+        //         "parent": Parent
+        //     }
+       // })
+        // var componentA = {};  // 局部
+        // var vm = new Vue({
+        //     el: '#app',
+        //     components: {
+
+        //         "components-a": componentA
+        //     },
+        //     watch: {
+
+        //     },
+        //     created: {
+
+        //     },
+        //     data: {
+        //         message: 'hello nanlan',
+        //         name: "xiaojuju"
+
+        //     }
+        // })
+        // console.log(vm.options)
+
+        // Vue.component('button-counter',{
+        //     data: function(){
+        //         return {
+        //            text: "xiaojuju "
+        //         }
+        //     },
+        //     el: "",
+        //     template: '<button>{{text}}</button>'
+        // })
+        // new Vue({el:'#app'})
+
+        // var myComponent = Vue.extend({
+        //     template: '<div>ddd </div>',
+        //     data: function(){
+        //         return {
+
+        //         }
+        //     }
+        // })
+        // new Vue({
+        //     el: '#app',
+        //     components: {
+        //         "my-component": myComponent
+        //     }
+        // })
+
+        // var myComponent = Vue.extend({
+        //      template: '<div>ddd</div>',
+        //       data: function(){
+        //         return {
+
+        //         }
+        //     }
+        // })
+        // new myComponent().$mount('#app');  
+
+        // var vm = new Vue({
+        //     el: "#app",
+        //     data: {
+
+        //     }
+        // })
+        // console.log(vm.$options)
+
+        // var componentA = {};  // 局部
+        // var Parent = Vue.extend({
+        //     data: function () {
+        //         age: 30
+        //     },
+        //     components: {
+        //         "my-component": componentA
+        //     },
+        //     directives: {}
+        // });
+
+        // var Child = Parent.extend({});
+
+        // var Parent = Vue.extend({
+        //     created: function(){
+        //         console.log("Parent")
+        //     }
+        // });
+        // var Child = Parent.extend({
+        //     created: function(){
+        //         console.log("Child")
+        //     }
+        // })
+        // console.log(Child.options);
+
+        // var Parent = Vue.extend({
+        //     watch: {
+        //         testP: function () {
+        //             console.log("ddd")
+        //         }
+        //     }
+        // });
+
+        var Child = Parent.extend({
+            data: function () {
+                return {
+                    test: 1
+                }
+            },
+            watch: {
+                test: function () {
+                    console.log("child")
+                },
+                a: true
+            }
+        })
+        console.log(Child.options);
+
+
+    </script>
+</body>
+
+</html>
