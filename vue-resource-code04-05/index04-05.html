@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <s cript type="text/javascript" src='./vue1.js'></script> -->
+    <script type="text/javascript" src='./vue1.js '></script>
+
+</head>
+
+<body>
+    <div id="app">
+    </div>
+    <script>
+        // var Child = {
+        //     template: "<div>{{message}}</div>",
+        //     props: ["message"]
+        // }
+
+        // var Parent = {
+        //     template: `<Child :message="message"></Child>`,
+        //     components: {
+        //         "Child": Child
+        //     },
+        //     data: function(){
+        //         return {
+        //             message: '123'
+        //         }
+        //     }
+        // }
+        // new Vue({
+        //     el: '#app',
+        //     components: {
+        //         "parent": Parent
+        //     }
+        // })
+
+        // var parent = Vue.extend({
+        //     template: "<div>{{message}}</div>",
+        //     props: {
+        //         type: Number,
+        //         default: 10,
+        //         validator: function (value) {
+        //             return value >= 10;
+        //         }
+        //     },
+        //     props: ["message"],
+        //     directives: {
+        //         test1: {
+        //             bind: function () {
+
+        //             }
+        //         },
+        //         test2: function () {
+
+        //         }
+        //     }
+
+        // })
+        // var child = parent.extend({
+        //     template: "<div>{{test}}</div>",
+        //     props: ["test"]
+
+        // })
+        // console.log(parent.options);
+
+        var componentA = {
+			// abstract:true,
+			template:"<div>max</div>",    //parent
+			created: function(){
+				console.log(this.options);   //父实例的引用   自动侦测的方式来找到他的父实例对象
+            },
+            data:{
+
+            }
+		}
+		var vm = new Vue({
+			 el:"#app",
+			 components:{
+				"component-a": componentA,  //注册子组件
+			 }
+		})
+		// console.log(vm)
+        // Vue.component('button-counter',{
+        //     data: function(){
+        //         return {
+        //            text: "xiaojuju "
+        //         }
+        //     },
+        //     el: "",
+        //     template: '<button>{{text}}</button>'
+        // })
+        // new Vue({el:'#app'})
+
+        // var myComponent = Vue.extend({
+        //     template: '<div>ddd </div>',
+        //     data: function(){
+        //         return {
+
+        //         }
+        //     }
+        // })
+        // new Vue({
+        //     el: '#app',
+        //     components: {
+        //         "my-component": myComponent
+        //     }
+        // })
+
+        // var myComponent = Vue.extend({
+        //      template: '<div>ddd</div>',
+        //       data: function(){
+        //         return {
+
+        //         }
+        //     }
+        // })
+        // new myComponent().$mount('#app');  
+
+        // var vm = new Vue({
+        //     el: "#app",
+        //     data: {
+
+        //     }
+        // })
+        // console.log(vm.$options)
+
+        // var componentA = {};  // 局部
+        // var Parent = Vue.extend({
+        //     data: function () {
+        //         age: 30
+        //     },
+        //     components: {
+        //         "my-component": componentA
+        //     },
+        //     directives: {}
+        // });
+
+        // var Child = Parent.extend({});
+
+        // var Parent = Vue.extend({
+        //     created: function(){
+        //         console.log("Parent")
+        //     }
+        // });
+        // var Child = Parent.extend({
+        //     created: function(){
+        //         console.log("Child")
+        //     }
+        // })
+        // console.log(Child.options);
+
+        // var Parent = Vue.extend({
+        //     watch: {
+        //         testP: function () {
+        //             console.log("ddd")
+        //         }
+        //     }
+        // });
+
+        // var Child = Parent.extend({
+        //     data: function () {
+        //         return {
+        //             test: 1
+        //         }
+        //     },
+        //     watch: {
+        //         test: function () {
+        //             console.log("child")
+        //         },
+        //         a: true
+        //     }
+        // })
+        // console.log(Child.options);
+
+        // var obj = { name: "nanlan" };
+        // var proxyObj = new Proxy(obj,{
+        //     has: function(target,key){
+        //         return key in target;
+        //     }
+        // })
+
+        //  console.log(name);
+        //  with(obj){
+        //      console.log(name);
+        //  }
+
+
+    </script>
+</body>
+
+</html>
